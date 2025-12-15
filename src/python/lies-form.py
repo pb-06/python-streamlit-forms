@@ -4,6 +4,10 @@ import requests
 st.set_page_config(page_title="Lies page", layout="wide")
 st.title("Lies form")
 
+def eventHandler(event):
+    print(event)
+    # TODO - implement event handler function
+
 with st.form(key="my-form"):
     col1, col2 = st.columns(2)
     with col1:

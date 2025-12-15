@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 st.set_page_config(page_title="Lies page", layout="wide")
 st.title("Lies form")
@@ -35,6 +36,9 @@ with st.form(key="my-form"):
                 "lie": lie
             }
             print(f"form_data_dict: {form_data_dict}")
+
+            res = requests.post(url="https://python-streamlit-forms-nine.vercel.app/api/lies", data=form_data_dict)
+            print(res)
 
             st.success("OK")
         else:

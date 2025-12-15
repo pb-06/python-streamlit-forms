@@ -17,9 +17,14 @@ with st.form(key="my-form"):
     col3, col4 = st.columns(2)
     with col3:
         st.subheader("Lie")
+        lie_date = st.date_input("Date", "today")
         lie = st.text_area("Lie")
     with col4:
         st.subheader("Review")
         consent = st.checkbox(" Yes, I really want to store these data!")
 
     submit = st.form_submit_button()
+    if (submit):
+        st.success("OK")
+    else:
+        st.error("Please fill out the form fields.")
